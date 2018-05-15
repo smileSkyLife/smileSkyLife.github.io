@@ -6,5 +6,16 @@
 </head>
 <body>
   Now, Web Usb Begins!
+  <button onclick="request()">add</button>
+  <script>
+      var request = function(){
+      	window.navigator.usb.requestDevice({
+          filters: [{vendorId: String(0).toString(16)}]
+        }).then( devices => {
+        	console.log(devices)
+        })
+      }
+
+  </script>
 </body>
 </html>
