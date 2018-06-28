@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Web USB</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
 </head>
 <body>
-  Now, Web Usb Begins!
-  <button onclick="request()">add</button>
+  <p id="status"></p>
   <script>
-      var request = function(){
-      	window.navigator.usb.requestDevice({
-          filters: [{vendorId: String(0).toString(16)}]
-        }).then( devices => {
-        	console.log(devices)
-        })
-      }
-
+    var status = document.getElementById('status')
+    var socket = io("ws://127.0.0.1:8099")
+    //connect_failed
+    socket.on('connect_failed', function() {
+      status.innerText = '连接失败'
+    })
+    socket.on('connecting', function() {
+      status.innerText = '连接中...'
+    })
+    socket.on('connect', function() {
+      status.innerText = '连接成功'
+    })
   </script>
 </body>
 </html>
