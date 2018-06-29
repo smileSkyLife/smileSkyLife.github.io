@@ -9,7 +9,7 @@
   <p id="status"></p>
   <script>
     var status = document.getElementById('status')
-    var socket = io("http://127.0.0.1:8099")
+    var socket = io("ws://127.0.0.1:8099")
     //connect_failed
     socket.on('error', function() {
       console.error(error)
