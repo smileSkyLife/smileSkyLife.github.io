@@ -23,7 +23,7 @@
       var close = false; //如果手动关闭连接后是不会尝试重新连接的
       var lockReconnect = false;  //避免ws重复连接
       var ws = null;          // 判断当前浏览器是否支持WebSocket
-      var wsUrl = "ws://127.0.0.1:8099";
+      var wsUrl = "wss://127.0.0.1:8099";
       var connectTimeout
       createWebSocket(wsUrl);   //连接ws
 
