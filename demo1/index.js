@@ -8,8 +8,8 @@ const text = `
  */
  body {
    transition: all 1s;
-	 perspective: 1000px;
-	 transform-style: preserve-3d;
+   perspective: 1000px;
+   transform-style: preserve-3d;
  }
  #container {
    transition: all 1s;
